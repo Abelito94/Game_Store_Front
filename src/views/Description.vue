@@ -2,18 +2,16 @@
   <div id="description">
     <v-img id="img" src="../assets/logo.png" />
     <v-img id="img2" src="../assets/name.png" />
-    <template>
-      <v-card id="cuadro" class="mx-auto" max-width="344">
+      <v-card id="cuadro" max-width="700">
         <v-card-text>
           <div>
-            <P>If you are interested in our products, if you want to find your favorite game, you just have to enter GameStore and you just have it. On our page we have many games on different platforms which you will get with simple operations, join the team !!!!!</P>
+            <P>Bienvenidos a Game Store donde podréis comprar vuestros juegos en formato digital al precio más económico desde cualquier plataforma, esta aplicación detecta en que plataforma estas(PS4,XBOX,Wii,PC)  y te ofrece los juegos disponibles para esa plataforma. Gracias por su visita!</P>
           </div>
         </v-card-text>
-        <v-card-actions>
-          <v-btn text color="cyan accent-2">JOIN</v-btn>
-        </v-card-actions>
+        <div>
+          <v-btn id="button" >Game Store</v-btn>
+        </div>
       </v-card>
-    </template>
   </div>
 </template>
 
@@ -25,30 +23,36 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  background-color: rgb(65, 14, 35);
-  text-align: center;
+  height: 700px;
+  background-color: red;
+  background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
 }
 #img {
-  margin-left: 420px;
+  margin-left: 500px;
   width: 500px;
   height: 250px;
 }
 #img2 {
   margin-top: -25px;
-  margin-left: 420px;
+  margin-left: 500px;
   width: 500px;
   height: 100px;
 }
-#text {
-  margin-top: 20px;
-  margin-left: 390px;
-} 
 #cuadro{
-  background-color: rgb(71, 15, 38);
-  margin-top: 20px;
-  margin-left: 500px;
+  
+  background-color: rgba(39, 35, 37, 0.39);
+  margin-top: 30px;
+  margin-left: 410px;
+ 
 }
 p{
-  color: rgb(126, 190, 190);
+  color: rgb(255, 255, 255); 
+}
+#button{
+background-color: rgb(33, 146, 235);
+ width: 110px; 
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color:rgb(255, 255, 255)
 }
 </style>
