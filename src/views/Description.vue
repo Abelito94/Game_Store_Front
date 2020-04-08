@@ -10,8 +10,12 @@
         </v-card-text>
         <div>
           <v-btn id="button" >Game Store</v-btn>
+          version 1.0
         </div>
       </v-card>
+      <div id="copyray">
+      © 2020 Game Store Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en EE. UU. y otros países++
+      </div>
   </div>
 </template>
 
@@ -23,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  height: 700px;
+  height: 721px;
   background-color: red;
   background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
 }
@@ -54,5 +58,9 @@ background-color: rgb(33, 146, 235);
   margin-left: 50%;
   transform: translateX(-50%);
   color:rgb(255, 255, 255)
+}
+#copyray{
+   margin-top: 190px;
+  margin-left: 280px;
 }
 </style>
