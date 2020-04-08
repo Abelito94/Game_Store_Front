@@ -2,12 +2,17 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Auth from "../views/Auth.vue";
-
+import Description from "../views/Description.vue"
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
+    name: "Description",
+    component: Description
+  },
+  {
+    path: "/auth",
     name: "Auth",
     component: Auth
   },

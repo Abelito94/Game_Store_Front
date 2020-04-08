@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div id="auth">
     <v-row>
       <v-col cols="6">
-        <h1 id="title">Welcome to Reboot Academy Vue App</h1>
+        <v-img id="img" src="../assets/logo.png"/>
+        <v-img id="img2" src="../assets/name.png"/>
       </v-col>
     </v-row>
     <v-row>
@@ -28,6 +29,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#auth{
+  margin-left: 380px;
+  text-align: center;
+}
+#img{
+  margin-left: 135px;
+  width: 250px;
+  height: 100px;
+}
+
+</style>
 
 

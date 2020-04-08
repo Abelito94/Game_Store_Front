@@ -2,7 +2,7 @@
   <div>
     <v-card width="400px" class="ml-5 mt-5 mx-a">
       <v-card-title class="pb-0">
-        <h1>Login</h1>
+        <h1 class="font-weight-thin">Login</h1>
       </v-card-title>
       <v-card-text>
         <v-form>

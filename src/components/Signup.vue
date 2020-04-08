@@ -2,7 +2,7 @@
   <div>
     <v-card width="400px" class="ml-5 mt-5 mx-a">
       <v-card-title class="pb-0">
-        <h1>Signup</h1>
+        <h1 class="font-weight-thin">Signup</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
@@ -33,7 +33,7 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn color="info" @click="signup">Signup</v-btn>
+        <v-btn color="info" @click="signup" >Signup</v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -46,14 +46,14 @@ export default {
   data() {
     return {
       showPassword: false,
-      userPassword: "Chiken123456",
+      userPassword: "",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      username: "Chiken",
+      username: "",
       userRules: [v => !!v || "Username is required"],
-      email: "a@a.com",
+      email: "",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
