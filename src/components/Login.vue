@@ -7,7 +7,6 @@
       <v-card-text>
         <v-form>
           <v-text-field label="E-mail" v-model="email" :rules="emailRules" prepend-icon="mdi-email"></v-text-field>
-
           <v-text-field
             label="Password"
             v-model="userPassword"
@@ -21,7 +20,9 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn @click="login">Login</v-btn>
+        <v-btn id="button" class="ma-2" color="orange darken-2" @click="login" >
+          Login
+        </v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -63,5 +64,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
-
+<style lang="scss" scoped>
+#button {
+  background-color: rgb(33, 146, 235);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+}
+</style>

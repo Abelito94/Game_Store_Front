@@ -1,4 +1,5 @@
 <template>
+<div id="description">
   <div id="auth">
     <v-row>
       <v-col cols="6">
@@ -15,6 +16,7 @@
       </v-col>
     </v-row>
   </div>
+</div>
 </template>
 
 <script>
@@ -30,14 +32,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#description {
+  height: 735px;
+  background-color: red;
+  background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
+  display:block;
+  margin:auto;
+}
 #auth{
   margin-left: 380px;
   text-align: center;
 }
 #img{
-  margin-left: 135px;
-  width: 250px;
+  margin-left: 440px;
+  width: 500px;
+  height: 250px;
+  display:block;
+  margin:auto;
+}
+#img2 {
+  margin-top: -25px;
+  margin-left: 440px;
+  width: 500px;
   height: 100px;
+  display:block;
+  margin:auto;
 }
 
 </style>
