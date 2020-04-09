@@ -35,7 +35,6 @@
             v-model="phoneNumber"
             :type="Number"
             prepend-icon="mdi-phone-outline"
-            :rules="numberRule"
           ></v-text-field>
         </v-form>
       </v-card-text>

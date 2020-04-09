@@ -1,40 +1,49 @@
 <template>
   <div>
-    <v-card color="grey lighten-4" flat tile>
-      <v-toolbar dense>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-        <v-toolbar-title>Game Store</v-toolbar-title>
-
-        <v-spacer></v-spacer>
-
-        <v-btn icon @click="logout">
-          <v-icon>mdi-exit-to-app</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
-      </v-toolbar>
-    </v-card>
-    <Navbar />
+    <GameList :data="serviceGames" />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+import GameList from "@/components/GameList.vue";
+import Api from "@/services/Api.js";
 
 export default {
   name: "Home",
   components: {
-    Navbar
+    GameList
   },
-  data() {},
+  data() {
+    return {
+      serviceGames: []
+    };
+  },
   methods: {
-    logout() {
-      localStorage.clear();
-      this.$router.push("/");
+    showAll: function() {
+      Api.getAllGames()
+        .then(games => (this.serviceGames = games))
+        .catch(err => console.log(err));
+    },
+    showCategory: function(myCategory) {
+      Api.getGamesByCategory(myCategory)
+        .then(games => (this.serviceGames = games.category))
+        .catch(err => console.log(err));
+    },
+    showName: function(name) {
+      Api.getGamesByCategory(name)
+        .then(games => (this.serviceGames = games.game))
+        .catch(err => console.log(err));
     }
+  },
+  mounted() {
+    this.showAll();
+
+    this.$root.$on("categoryId", categoryId => {
+      if (categoryId === "todos") this.showAll();
+      else this.showCategory(categoryId);
+    });
+
+    this.$root.$on("search", search => {this.showName(search)})
   }
 };
 </script>

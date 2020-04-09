@@ -2,37 +2,24 @@
   <div>
     <div>
       <v-card color="grey lighten-4" flat tile>
-        <v-toolbar dense>
-          <v-btn id="button0" @click="allGames">Todos</v-btn>
+        <v-toolbar>
+          <v-btn id="button0" @click="gamesByCategory('todos')">Todos</v-btn>
           <v-spacer></v-spacer>
-          <v-btn id="button1">Arcade</v-btn>
+          <v-btn id="button1" @click="gamesByCategory('arcade')">Arcade</v-btn>
           <v-spacer></v-spacer>
-          <v-btn id="button2">Aventura</v-btn>
+          <v-btn id="button2" @click="gamesByCategory('aventura')">Aventura</v-btn>
           <v-spacer></v-spacer>
-          <v-btn id="button3">Miedo</v-btn>
+          <v-btn id="button3" @click="gamesByCategory('miedo')">Miedo</v-btn>
           <v-spacer></v-spacer>
-          <v-btn id="button4">Simulador</v-btn>
+          <v-btn id="button4" @click="gamesByCategory('simulador')">Simulador</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
           <div>
-            <v-text-field label="Buscar" :rules="rules" hide-details="auto"></v-text-field>
+            <v-text-field label="Buscar" v-model="mySearch" @keyup.enter="search()" hide-details="auto"></v-text-field>
           </div>
         </v-toolbar>
-      </v-card>
-    </div>
-    <div>
-      <v-card class="mx-auto">
-        <v-list shaped>
-          <v-list-item-group v-model="item" color="primary">
-            <v-list-item v-for="(game) in games" :key="game.id">
-              <v-list-item-content>
-                <v-list-item-title v-text="game.name"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
       </v-card>
     </div>
   </div>
@@ -46,14 +33,17 @@ export default {
   components: {},
   data() {
     return {
-      games: []
+      games: [],
+      category: "",
+      mySearch: ""
     };
   },
   methods: {
-    allGames() {
-      Api.getAllGames()
-        .then(response => (this.games = response))
-        .catch(err);
+    gamesByCategory(myCategory) {
+      this.$root.$emit('categoryId', myCategory)
+    },
+    search() {
+      this.$root.$emit('search', this.mySearch)
     }
   }
 };
