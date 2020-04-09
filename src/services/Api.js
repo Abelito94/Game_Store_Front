@@ -14,6 +14,17 @@ export default {
       ...newUser
     });
     return response.data;
-  }
+  },
+  async login(user) {
+    const response = await API.post("/auth/login", {
+      ...user
+    });
+    return response.data;
+  },
+  async getAllGames() {
+    const response = await API.get("/search/", {
+    });
+    return response.data;
+  },
 };
 

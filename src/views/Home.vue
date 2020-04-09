@@ -17,34 +17,19 @@
         </v-btn>
       </v-toolbar>
     </v-card>
-    <v-card color="grey lighten-4" flat tile>
-      <v-toolbar dense>
-        <v-btn id="button1">Arcade</v-btn>
-        <v-spacer></v-spacer>
-        <v-btn id="button2">Aventura</v-btn>
-        <v-spacer></v-spacer>
-        <v-btn id="button3">Miedo</v-btn>
-        <v-spacer></v-spacer>
-        <v-btn id="button4">Simulador</v-btn>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-        <div>
-          <v-text-field label="Search"  :rules="rules" hide-details="auto"></v-text-field>
-        </div>
-
-      </v-toolbar>
-    </v-card>
+    <Navbar />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Navbar from "@/components/Navbar.vue";
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Navbar
+  },
+  data() {},
   methods: {
     logout() {
       localStorage.clear();
@@ -53,4 +38,3 @@ export default {
   }
 };
 </script>
-

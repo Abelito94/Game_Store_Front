@@ -6,10 +6,7 @@
       </v-card-title>
       <v-card-text>
         <v-form>
-          <v-text-field
-            label="Username"
-            prepend-icon="mdi-account-circle"
-          ></v-text-field>
+          <v-text-field label="E-mail" v-model="email" :rules="emailRules" prepend-icon="mdi-email"></v-text-field>
 
           <v-text-field
             label="Password"
@@ -24,13 +21,15 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn color="info">Login</v-btn>
+        <v-btn @click="login">Login</v-btn>
       </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import APIServices from "../services/Api";
+
 export default {
   data() {
     return {
@@ -39,8 +38,27 @@ export default {
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
+      ],
+      email: "",
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
       ]
     };
+  },
+  methods: {
+    login() {
+      const user = {
+        email: this.email,
+        password: this.userPassword
+      };
+      APIServices.login(user)
+        .then(response => {
+          localStorage.setItem("token", response.token);
+          this.$router.push("/home");
+        })
+        .catch(err => console.log(err));
+    }
   }
 };
 </script>

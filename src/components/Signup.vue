@@ -29,11 +29,19 @@
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
           ></v-text-field>
+          
+           <v-text-field
+            label="Phone-Number"
+            v-model="phoneNumber"
+            :type="Number"
+            prepend-icon="mdi-phone-outline"
+            :rules="numberRule"
+          ></v-text-field>
         </v-form>
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn color="info" @click="signup">Signup</v-btn>
+        <v-btn @click="signup">Signup</v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -63,9 +71,10 @@ export default {
   methods: {
     signup() {
       const newUser = {
-        user_name: this.username,
-        user_email: this.email,
-        user_password: this.userPassword
+        name: this.username,
+        email: this.email,
+        password: this.userPassword,
+        phone: this.phoneNumber
       };
 
       APIServices.signup(newUser)
