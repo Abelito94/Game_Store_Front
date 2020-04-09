@@ -33,7 +33,6 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  height: 735px;
   background-color: red;
   background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
   display:block;

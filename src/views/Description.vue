@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  height: 735px;
+  
   background-color: red;
   background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
   display:block;
@@ -74,9 +74,8 @@ p {
   color: rgb(255, 255, 255);
 }
 #copyray {
-  margin-top: 190px;
+  margin-top: 202px;
   margin-left: 280px;
-  
 }
 #version{
   color: black;
