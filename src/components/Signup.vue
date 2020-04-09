@@ -33,7 +33,7 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions>
-        <v-btn color="info" @click="signup" >Signup</v-btn>
+        <v-btn color="info" @click="signup">Signup</v-btn>
       </v-card-actions>
     </v-card>
   </div>
