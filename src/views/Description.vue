@@ -10,9 +10,10 @@
       </v-card-text>
       <div>
         <v-btn id="button" class="ma-2" color="orange darken-2" @click="logAuth" dark>
-          <v-icon dark left>mdi-arrow-left</v-icon>Game Store
+          Game Store
         </v-btn>
       </div>
+      <p id="version">Version 1.0</p>
     </v-card>
     <div
       id="copyray"
@@ -35,25 +36,33 @@ export default {
 
 <style lang="scss" scoped>
 #description {
-  height: 721px;
+  height: 735px;
   background-color: red;
   background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
+  display:block;
+  margin:auto;
 }
 #img {
   margin-left: 440px;
   width: 500px;
   height: 250px;
+  display:block;
+  margin:auto;
 }
 #img2 {
   margin-top: -25px;
   margin-left: 440px;
   width: 500px;
   height: 100px;
+  display:block;
+  margin:auto;
 }
 #cuadro {
   background-color: rgba(39, 35, 37, 0.39);
   margin-top: 50px;
   margin-left: 350px;
+  display:block;
+  margin:auto;
 }
 p {
   color: rgb(255, 255, 255);
@@ -67,5 +76,10 @@ p {
 #copyray {
   margin-top: 190px;
   margin-left: 280px;
+  
+}
+#version{
+  color: black;
+  margin-left: 88%
 }
 </style>
