@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list">
     <GameCard v-for="(game, idx) in data" :key="idx" :data="game"/>
   </div>
 </template>
@@ -17,4 +17,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 </style>

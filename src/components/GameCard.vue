@@ -1,12 +1,25 @@
-<template>
 
-  <div id="card">
-    
-    <img :src="data.photo_url" >
-    <!--{{data.name}}-->
-  </div>   
-  
+
+<template>
+  <v-card class="ma-8" id="card" max-width="300" outlined>
+    <v-list-item three-line>
+      <v-list-item-avatar tile size="80" color="grey">
+        <img :src="data.photo_url" />
+      </v-list-item-avatar>
+
+      <v-list-item-content>
+        <v-list-item-title class="headline mb-1 margin">{{data.name}}</v-list-item-title>
+        <v-list-item-subtitle class="margin">{{data.developers}}</v-list-item-subtitle>
+        <v-list-item-subtitle class="margin">{{data.price}}€</v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
+
+    <v-card-actions>
+      <v-btn>Add to cart</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
+
 
 <script>
 export default {
@@ -17,23 +30,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img{
-height: 225px; 
-width: 10%; 
-display: block;
-margin: 20px;
-padding: 10px;
-float:left;
- font-size: 25px;
-background-color: #000
+.margin{
+  margin-left: 20px;
 }
-#description {
-  
-  background-color: red;
-  background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
-  display:block;
-  margin:auto;
+#card{
+  margin: 10px 15px;
 }
-
+img {
+  height: 225px;
+  width: 10%;
+}
 </style>
 
