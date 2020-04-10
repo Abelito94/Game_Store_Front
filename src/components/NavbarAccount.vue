@@ -7,14 +7,14 @@
         <v-toolbar-title>Game Store</v-toolbar-title>
 
         <v-spacer></v-spacer>
+        <v-btn icon @click="account">
+          <v-icon>mdi-account</v-icon>
+        </v-btn>
 
         <v-btn icon @click="logout">
           <v-icon>mdi-exit-to-app</v-icon>
         </v-btn>
 
-        <v-btn icon>
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
       </v-toolbar>
    
   </div>
@@ -26,6 +26,9 @@ export default {
     logout() {
       localStorage.clear();
       this.$router.push("/");
+    },
+    account(userId) {
+      this.$root.$emit('account', userId)
     }
   }
 };

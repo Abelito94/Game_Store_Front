@@ -1,21 +1,31 @@
 <template>
   <div>
+    <NavbarAccount />
+    <Navbar />
     <GameList :data="serviceGames" />
+    <User :user="user" />
   </div>
 </template>
 
 <script>
 import GameList from "@/components/GameList.vue";
 import Api from "@/services/Api.js";
+import Navbar from "@/components/Navbar.vue";
+import NavbarAccount from "@/components/NavbarAccount.vue";
+import User from '@/components/User.vue';
 
 export default {
   name: "Home",
   components: {
-    GameList
+    GameList,
+    Navbar,
+    NavbarAccount,
+    User
   },
   data() {
     return {
-      serviceGames: []
+      serviceGames: [],
+      user: Object
     };
   },
   methods: {
@@ -33,6 +43,11 @@ export default {
       Api.getGamesByCategory(name)
         .then(games => (this.serviceGames = games.game))
         .catch(err => console.log(err));
+    },
+    showUser: function(user) {
+      Api.getUser(user)
+        .then(user => (this.user = user))
+        .catch(err => console.log(err))
     }
   },
   mounted() {
@@ -44,6 +59,8 @@ export default {
     });
 
     this.$root.$on("search", search => {this.showName(search)})
+
+    this.$root.$on('account', userId => {this.showuser(userId)})
   }
 };
 </script>

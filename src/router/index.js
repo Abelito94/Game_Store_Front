@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Auth from "../views/Auth.vue";
 import Description from "../views/Description.vue"
+
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -20,7 +22,7 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home
-  }
+  },
 ];
 
 const router = new VueRouter({
