@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-card color="grey lighten-4" flat tile>
-      <v-toolbar dense>
+    
+      <v-toolbar id="description">
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
         <v-toolbar-title>Game Store</v-toolbar-title>
@@ -16,7 +16,7 @@
           <v-icon>mdi-account</v-icon>
         </v-btn>
       </v-toolbar>
-    </v-card>
+   
   </div>
 </template>
 
@@ -32,4 +32,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#description {
+  
+  background-color: red;
+  background-image: linear-gradient(-90deg, rgb(0, 97, 211), rgb(244, 0, 0));
+}
+#icon{
+text-align: right; 
+padding-right: 1rem;
+}
+#titulo{
+  
+ 
+
+display: block;
+}
+
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+ 
     <div>
-      <v-card color="grey lighten-4" flat tile>
-        <v-toolbar>
+     <div>
+        <v-toolbar id="description">
           <v-btn id="button0" @click="gamesByCategory('todos')">Todos</v-btn>
           <v-spacer></v-spacer>
           <v-btn id="button1" @click="gamesByCategory('arcade')">Arcade</v-btn>
@@ -20,9 +20,10 @@
             <v-text-field label="Buscar" v-model="mySearch" @keyup.enter="search()" hide-details="auto"></v-text-field>
           </div>
         </v-toolbar>
-      </v-card>
+     
     </div>
-  </div>
+  
+ </div>
 </template>
 
 <script>
@@ -49,5 +50,28 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
+#description {
+  background-color: rgb(254, 254, 255);
+  background-image: linear-gradient(-900deg, rgba(0, 0, 0, 0.623), rgb(249, 188, 188));
+  display:block;
+  margin:auto;
+}
+#button0 {
+ background-color:rgba(179, 28, 28, 0.863);
+}
+#button1 {
+ background-color:rgba(179, 28, 28, 0.863);
+}
+#button2 {
+ background-color:rgba(179, 28, 28, 0.863);
+}
+#button3 {
+ background-color:rgba(179, 28, 28, 0.863);
+}
+#button4 {
+ background-color:rgba(179, 28, 28, 0.863);
+}
 </style>
+
