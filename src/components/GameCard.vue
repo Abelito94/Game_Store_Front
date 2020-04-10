@@ -37,8 +37,8 @@ export default {
   margin: 10px 15px;
 }
 img {
-  height: 225px;
-  width: 10%;
+  height: auto;
+  width: 80%;
 }
 </style>
 
