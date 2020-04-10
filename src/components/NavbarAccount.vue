@@ -27,9 +27,9 @@ export default {
       localStorage.clear();
       this.$router.push("/");
     },
-    account(userId) {
-      this.$root.$emit('account', userId)
-    }
+   // account(userId) {
+    //  this.$root.$emit('account', userId)
+    //}
   }
 };
 </script>

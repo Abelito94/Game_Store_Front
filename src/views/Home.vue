@@ -3,7 +3,7 @@
     <NavbarAccount />
     <Navbar />
     <GameList :data="serviceGames" />
-    <User :user="user" />
+    <!-- <User :user="user" /> -->
   </div>
 </template>
 
@@ -12,15 +12,15 @@ import GameList from "@/components/GameList.vue";
 import Api from "@/services/Api.js";
 import Navbar from "@/components/Navbar.vue";
 import NavbarAccount from "@/components/NavbarAccount.vue";
-import User from '@/components/User.vue';
+//import User from '@/components/User.vue';
 
 export default {
   name: "Home",
   components: {
     GameList,
     Navbar,
-    NavbarAccount,
-    User
+    NavbarAccount
+    //User
   },
   data() {
     return {
@@ -44,11 +44,11 @@ export default {
         .then(games => (this.serviceGames = games.game))
         .catch(err => console.log(err));
     },
-    showUser: function(user) {
-      Api.getUser(user)
-        .then(user => (this.user = user))
-        .catch(err => console.log(err))
-    }
+    //showUser: function(user) {
+     // Api.getUser(user)
+       // .then(user => (this.user = user))
+        //.catch(err => console.log(err))
+   // }
   },
   mounted() {
     this.showAll();
@@ -60,7 +60,7 @@ export default {
 
     this.$root.$on("search", search => {this.showName(search)})
 
-    this.$root.$on('account', userId => {this.showuser(userId)})
+  //  this.$root.$on('account', userId => {this.showuser(userId)})
   }
 };
 </script>
